@@ -26,21 +26,33 @@ async function apiRequest(method, path, data) {
 
 // Known endpoints derived from the project spec
 export const endpoints = {
+  "/api/register": {
+    "method": "POST",
+    "path": "/api/register"
+  },
+  "/api/login": {
+    "method": "POST",
+    "path": "/api/login"
+  },
   "/api/products": {
     "method": "GET",
     "path": "/api/products"
   },
-  "/api/cart/add": {
-    "method": "POST",
-    "path": "/api/cart/add"
+  "/api/products/{product_id}": {
+    "method": "GET",
+    "path": "/api/products/{product_id}"
+  },
+  "/api/cart": {
+    "method": "GET",
+    "path": "/api/cart"
+  },
+  "/api/cart/{product_id}": {
+    "method": "DELETE",
+    "path": "/api/cart/{product_id}"
   },
   "/api/orders": {
-    "method": "GET",
-    "path": "/api/orders"
-  },
-  "/api/admin/products": {
     "method": "POST",
-    "path": "/api/admin/products"
+    "path": "/api/orders"
   }
 };
 
