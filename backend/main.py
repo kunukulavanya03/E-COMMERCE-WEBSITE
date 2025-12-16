@@ -16,8 +16,8 @@ load_dotenv()
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="The_Backend_Api_For_The_E-Commerce-Website_Is_Designed_To_Handle_All_Business_Logic_And_Data_Management_For_The_Frontend_Application_Built_With_React._It_Will_Use_Fastapi_For_Its_Robustness,_Performance,_And_Ease_Of_Development,_Paired_With_Sqlalchemy_For_Orm_Capabilities. API",
-    description="Complete backend API for the_backend_api_for_the_e-commerce-website_is_designed_to_handle_all_business_logic_and_data_management_for_the_frontend_application_built_with_react._it_will_use_fastapi_for_its_robustness,_performance,_and_ease_of_development,_paired_with_sqlalchemy_for_orm_capabilities.",
+    title="This_Project_Aims_To_Develop_The_Backend_Api_For_An_E-Commerce_Website_Using_Fastapi_And_Sqlalchemy,_With_Authentication_Via_Jwt. API",
+    description="Complete backend API for this_project_aims_to_develop_the_backend_api_for_an_e-commerce_website_using_fastapi_and_sqlalchemy,_with_authentication_via_jwt.",
     version="1.0.0"
 )
 
@@ -42,11 +42,11 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to The_Backend_Api_For_The_E-Commerce-Website_Is_Designed_To_Handle_All_Business_Logic_And_Data_Management_For_The_Frontend_Application_Built_With_React._It_Will_Use_Fastapi_For_Its_Robustness,_Performance,_And_Ease_Of_Development,_Paired_With_Sqlalchemy_For_Orm_Capabilities. API", "status": "running"}
+    return {"message": "Welcome to This_Project_Aims_To_Develop_The_Backend_Api_For_An_E-Commerce_Website_Using_Fastapi_And_Sqlalchemy,_With_Authentication_Via_Jwt. API", "status": "running"}
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "service": "the_backend_api_for_the_e-commerce-website_is_designed_to_handle_all_business_logic_and_data_management_for_the_frontend_application_built_with_react._it_will_use_fastapi_for_its_robustness,_performance,_and_ease_of_development,_paired_with_sqlalchemy_for_orm_capabilities."}
+    return {"status": "healthy", "service": "this_project_aims_to_develop_the_backend_api_for_an_e-commerce_website_using_fastapi_and_sqlalchemy,_with_authentication_via_jwt."}
 
 # Authentication endpoints
 @app.post("/auth/register")
