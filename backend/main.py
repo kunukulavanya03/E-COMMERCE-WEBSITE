@@ -16,8 +16,8 @@ load_dotenv()
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="The_Backend_Api_For_The_E-Commerce-Website_Is_Designed_To_Handle_All_Business_Logic_And_Data_Operations_For_An_E-Commerce_Platform._It_Will_Be_Built_Using_Fastapi,_A_Modern,_Fast_(High-Performance),_Web_Framework_For_Building_Apis_With_Python_3.7+_Based_On_Standard_Python_Type_Hints._Sqlalchemy_Will_Be_Used_As_The_Orm_To_Interact_With_The_Database. API",
-    description="Complete backend API for the_backend_api_for_the_e-commerce-website_is_designed_to_handle_all_business_logic_and_data_operations_for_an_e-commerce_platform._it_will_be_built_using_fastapi,_a_modern,_fast_(high-performance),_web_framework_for_building_apis_with_python_3.7+_based_on_standard_python_type_hints._sqlalchemy_will_be_used_as_the_orm_to_interact_with_the_database.",
+    title="The_Backend_Api_For_The_E-Commerce-Website_Is_Designed_To_Handle_All_Business_Logic_And_Data_Management_For_The_Frontend_Application_Built_With_React._It_Will_Use_Fastapi_For_Its_Robustness,_Performance,_And_Ease_Of_Development,_Paired_With_Sqlalchemy_For_Orm_Capabilities. API",
+    description="Complete backend API for the_backend_api_for_the_e-commerce-website_is_designed_to_handle_all_business_logic_and_data_management_for_the_frontend_application_built_with_react._it_will_use_fastapi_for_its_robustness,_performance,_and_ease_of_development,_paired_with_sqlalchemy_for_orm_capabilities.",
     version="1.0.0"
 )
 
@@ -42,11 +42,11 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to The_Backend_Api_For_The_E-Commerce-Website_Is_Designed_To_Handle_All_Business_Logic_And_Data_Operations_For_An_E-Commerce_Platform._It_Will_Be_Built_Using_Fastapi,_A_Modern,_Fast_(High-Performance),_Web_Framework_For_Building_Apis_With_Python_3.7+_Based_On_Standard_Python_Type_Hints._Sqlalchemy_Will_Be_Used_As_The_Orm_To_Interact_With_The_Database. API", "status": "running"}
+    return {"message": "Welcome to The_Backend_Api_For_The_E-Commerce-Website_Is_Designed_To_Handle_All_Business_Logic_And_Data_Management_For_The_Frontend_Application_Built_With_React._It_Will_Use_Fastapi_For_Its_Robustness,_Performance,_And_Ease_Of_Development,_Paired_With_Sqlalchemy_For_Orm_Capabilities. API", "status": "running"}
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "service": "the_backend_api_for_the_e-commerce-website_is_designed_to_handle_all_business_logic_and_data_operations_for_an_e-commerce_platform._it_will_be_built_using_fastapi,_a_modern,_fast_(high-performance),_web_framework_for_building_apis_with_python_3.7+_based_on_standard_python_type_hints._sqlalchemy_will_be_used_as_the_orm_to_interact_with_the_database."}
+    return {"status": "healthy", "service": "the_backend_api_for_the_e-commerce-website_is_designed_to_handle_all_business_logic_and_data_management_for_the_frontend_application_built_with_react._it_will_use_fastapi_for_its_robustness,_performance,_and_ease_of_development,_paired_with_sqlalchemy_for_orm_capabilities."}
 
 # Authentication endpoints
 @app.post("/auth/register")
