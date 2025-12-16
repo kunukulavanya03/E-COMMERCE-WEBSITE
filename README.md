@@ -1,6 +1,6 @@
-# E-COMMERCE-WEBSITE
+# e-commerce-website
 
-Backend API for E-COMMERCE-WEBSITE
+Backend API for e-commerce-website
 
 ## Tech Stack
 
@@ -11,7 +11,7 @@ Backend API for E-COMMERCE-WEBSITE
 ## Project Structure
 
 ```
-E-COMMERCE-WEBSITE/
+e-commerce-website/
 ├── frontend/          # Frontend application
 ├── backend/           # Backend API
 ├── README.md          # This file
@@ -43,21 +43,17 @@ cd backend
 
 ## Features
 
-- product_browsing
-- cart_management
-- order_tracking
-- admin_product_management
+- Product browsing and filtering
+- Cart management
+- Order history tracking
+- Admin product management
 
 ## API Endpoints
 
-- `GET /api/products` - Retrieve a list of all products.
-- `GET /api/products/{product_id}` - Retrieve a specific product by ID.
-- `POST /api/cart` - Add a product to the user's cart.
+- `GET /api/products` - Retrieve a list of all available products.
+- `POST /api/cart/add` - Add a product to the user's cart.
 - `GET /api/orders` - Retrieve a list of all orders for the authenticated user.
-- `POST /api/orders` - Place a new order for the authenticated user.
-- `POST /api/admin/products` - Create a new product as an admin.
-- `PUT /api/admin/products/{product_id}` - Update an existing product as an admin.
-- `DELETE /api/admin/products/{product_id}` - Delete a product as an admin.
+- `POST /api/admin/products` - Create a new product.
 
 ## License
 
