@@ -30,25 +30,17 @@ export const endpoints = {
     "method": "GET",
     "path": "/api/products"
   },
-  "/api/products/{product_id}": {
-    "method": "GET",
-    "path": "/api/products/{product_id}"
-  },
-  "/api/cart": {
+  "/api/cart/add": {
     "method": "POST",
-    "path": "/api/cart"
+    "path": "/api/cart/add"
   },
   "/api/orders": {
-    "method": "POST",
+    "method": "GET",
     "path": "/api/orders"
   },
   "/api/admin/products": {
     "method": "POST",
     "path": "/api/admin/products"
-  },
-  "/api/admin/products/{product_id}": {
-    "method": "DELETE",
-    "path": "/api/admin/products/{product_id}"
   }
 };
 
