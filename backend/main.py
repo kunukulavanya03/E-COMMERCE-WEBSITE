@@ -1,23 +1,16 @@
-from fastapi import FastAPI, HTTPException, Depends, status
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from dotenv import load_dotenv
-import os
+import models
+import schemas
 from database import get_db, engine
-from models import Base, User
-from auth import verify_token, create_access_token, hash_password, verify_password
-from schemas import *
-import logging
-
-load_dotenv()
 
 # Create tables
-Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="This_Project_Aims_To_Develop_The_Backend_Api_For_An_E-Commerce_Website_Using_Fastapi_And_Sqlalchemy,_With_Authentication_Via_Jwt. API",
-    description="Complete backend API for this_project_aims_to_develop_the_backend_api_for_an_e-commerce_website_using_fastapi_and_sqlalchemy,_with_authentication_via_jwt.",
+    title="This_Project_Defines_The_Backend_Api_For_An_E-Commerce_Website._The_Api_Will_Be_Built_Using_Fastapi_And_Sqlalchemy_In_Python,_Providing_Restful_Endpoints_For_Managing_Products,_Users,_Orders,_And_Other_E-Commerce_Related_Functionalities._The_Frontend_Will_Be_Developed_Using_React_And_Will_Consume_This_Api. API",
+    description="Generated from Impact Analysis specifications",
     version="1.0.0"
 )
 
@@ -30,77 +23,32 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-security = HTTPBearer()
-
-# Authentication dependency
-def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
-    token = credentials.credentials
-    user_id = verify_token(token)
-    if not user_id:
-        raise HTTPException(status_code=401, detail="Invalid token")
-    return user_id
-
 @app.get("/")
-def read_root():
-    return {"message": "Welcome to This_Project_Aims_To_Develop_The_Backend_Api_For_An_E-Commerce_Website_Using_Fastapi_And_Sqlalchemy,_With_Authentication_Via_Jwt. API", "status": "running"}
+def root():
+    return {
+        "message": "API is running",
+        "endpoints": 1,
+        "models": 7
+    }
 
 @app.get("/health")
-def health_check():
-    return {"status": "healthy", "service": "this_project_aims_to_develop_the_backend_api_for_an_e-commerce_website_using_fastapi_and_sqlalchemy,_with_authentication_via_jwt."}
+def health():
+    return {"status": "healthy", "service": "this_project_defines_the_backend_api_for_an_e-commerce_website._the_api_will_be_built_using_fastapi_and_sqlalchemy_in_python,_providing_restful_endpoints_for_managing_products,_users,_orders,_and_other_e-commerce_related_functionalities._the_frontend_will_be_developed_using_react_and_will_consume_this_api."}
 
-# Authentication endpoints
-@app.post("/auth/register")
-def register(user_data: UserCreate, db: Session = Depends(get_db)):
-    # Check if user exists
-    existing_user = db.query(User).filter(User.email == user_data.email).first()
-    if existing_user:
-        raise HTTPException(status_code=400, detail="Email already registered")
+# Generated API endpoints
+@app.put("/30")
+def 30(id: int, item_data: schemas.FieldsCreate, db: Session = Depends(get_db)):
+    # Update item
+    item = db.query(models.Fields).filter(models.Fields.id == id).first()
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
     
-    # Create new user
-    hashed_password = hash_password(user_data.password)
-    new_user = User(
-        email=user_data.email,
-        username=user_data.username,
-        hashed_password=hashed_password
-    )
-    db.add(new_user)
+    for key, value in item_data.dict().items():
+        setattr(item, key, value)
+    
     db.commit()
-    db.refresh(new_user)
-    
-    # Create access token
-    access_token = create_access_token(data={"sub": str(new_user.id)})
-    return {"access_token": access_token, "token_type": "bearer", "user_id": new_user.id}
-
-@app.post("/auth/login")
-def login(user_data: UserLogin, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == user_data.email).first()
-    if not user or not verify_password(user_data.password, user.hashed_password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-    
-    access_token = create_access_token(data={"sub": str(user.id)})
-    return {"access_token": access_token, "token_type": "bearer", "user_id": user.id}
-
-# API endpoints
-@app.get("/api/items")
-def get_items(db: Session = Depends(get_db), current_user: int = Depends(get_current_user)):
-    # Get all items
-    try:
-        items = db.query(Item).filter(Item.owner_id == current_user).all()
-        return {"items": items, "total": len(items)}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/api/items")
-def create_item(item_data: ItemCreate, db: Session = Depends(get_db), current_user: int = Depends(get_current_user)):
-    # Create new item
-    try:
-        new_item = Item(**item_data.dict(), owner_id=current_user)
-        db.add(new_item)
-        db.commit()
-        db.refresh(new_item)
-        return {"item": new_item, "message": "Item created successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    db.refresh(item)
+    return item
 
 
 
