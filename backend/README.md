@@ -1,71 +1,27 @@
-# This_Project_Aims_To_Develop_The_Backend_Api_For_An_E-Commerce_Website_Using_Fastapi_And_Sqlalchemy,_With_Authentication_Via_Jwt. Backend API
+# This_Project_Defines_The_Backend_Api_For_An_E-Commerce_Website._The_Api_Will_Be_Built_Using_Fastapi_And_Sqlalchemy_In_Python,_Providing_Restful_Endpoints_For_Managing_Products,_Users,_Orders,_And_Other_E-Commerce_Related_Functionalities._The_Frontend_Will_Be_Developed_Using_React_And_Will_Consume_This_Api. API
 
-Complete FastAPI backend with authentication, database models, and API endpoints.
+Generated from Impact Analysis specifications.
 
-## Features
+## Endpoints
 
-- FastAPI framework with automatic OpenAPI documentation
-- JWT authentication with user registration/login
-- SQLAlchemy ORM with database models
-- Pydantic schemas for request/response validation
-- CORS middleware for frontend integration
-- Comprehensive error handling
-- Database migrations with Alembic
+- PUT /30
+
+## Models
+
+- Fields
+- Data
+- Database
+- Restaurant
+- User
+- Order
+- Function
 
 ## Setup
 
-1. Install dependencies:
 ```bash
 pip install -r requirements.txt
-```
-
-2. Set up environment variables:
-```bash
-cp .env.example .env
-# Edit .env with your configuration
-```
-
-3. Run the application:
-```bash
 python main.py
 ```
 
-Or with uvicorn:
-```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
-
-## API Documentation
-
-Once running, visit:
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
-
-## API Endpoints
-
-### Authentication
-- POST `/auth/register` - Register new user
-- POST `/auth/login` - Login user
-
-### Core Endpoints
-- GET `/api/items` - Get all items
-- POST `/api/items` - Create new item
-- PUT `/api/items/<built-in function id>` - Update item
-- DELETE `/api/items/<built-in function id>` - Delete item
-
-## Database
-
-The application uses SQLite by default. To use PostgreSQL:
-
-1. Install PostgreSQL
-2. Update DATABASE_URL in .env:
-```
-DATABASE_URL=postgresql://user:password@localhost/dbname
-```
-
-## Testing
-
-Run tests with:
-```bash
-pytest
-```
+API runs on http://localhost:8000
+Docs available at http://localhost:8000/docs
