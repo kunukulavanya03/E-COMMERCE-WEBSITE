@@ -1,17 +1,17 @@
-# e-commerce-website
+# E-COMMERCE-WEBSITE
 
-Backend API for e-commerce-website
+Backend API for E-COMMERCE-WEBSITE
 
 ## Tech Stack
 
 - **Frontend**: React
 - **Backend**: FastAPI + SQLAlchemy
-- **Frontend Source**: GitHub ([Repository](https://github.com/Malleswar-249/E-COMMERCE-WEBSITE))
+- **Frontend Source**: GitHub ([Repository](https://github.com/HimaShankarReddyEguturi/Hotelbookinguidesign.git))
 
 ## Project Structure
 
 ```
-e-commerce-website/
+E-COMMERCE-WEBSITE/
 ├── frontend/          # Frontend application
 ├── backend/           # Backend API
 ├── README.md          # This file
@@ -43,21 +43,27 @@ cd backend
 
 ## Features
 
-- User Authentication
-- Product Management
-- Shopping Cart
-- Order Processing
+- User authentication and authorization
+- Product catalog management
+- Shopping cart functionality
+- Order processing and management
+- Category management
+- Admin panel for managing products and users
+- Search functionality
+- Pagination for product listing
 
 ## API Endpoints
 
-- `POST /api/register` - Endpoint for user registration.
-- `POST /api/login` - Endpoint for user login.
-- `GET /api/products` - Endpoint to retrieve all products.
-- `GET /api/products/{product_id}` - Endpoint to retrieve a specific product by ID.
-- `POST /api/cart` - Endpoint to add a product to the user's cart.
-- `GET /api/cart` - Endpoint to view all products in the user's cart.
-- `DELETE /api/cart/{product_id}` - Endpoint to remove a product from the user's cart.
-- `POST /api/orders` - Endpoint to create an order for the items in the user's cart.
+- `POST /api/auth/register` - Register a new user account.
+- `POST /api/auth/login` - Log in an existing user.
+- `GET /api/products` - Retrieve a list of products, with optional pagination and filtering.
+- `GET /api/products/{product_id}` - Retrieve details for a specific product.
+- `POST /api/products` - Create a new product (Admin only).
+- `PUT /api/products/{product_id}` - Update an existing product (Admin only).
+- `DELETE /api/products/{product_id}` - Delete a product (Admin only).
+- `GET /api/categories` - Retrieve a list of product categories.
+- `GET /api/cart` - Retrieve the user's shopping cart.
+- `POST /api/cart/add` - Add a product to the user's shopping cart.
 
 ## License
 
