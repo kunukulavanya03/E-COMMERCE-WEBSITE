@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
-import { createAuthregister, getProducts{product_id}, getOrders{order_id}, getCart, createOrders, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, deleteCartremove{product_id}, createAuthpassword_reset } from './services/api';
+import { createAuthregister, getProducts{product_id}, getOrders{order_id}, createOrderscreate, getAuthme, getCart, updateCartupdate{product_id}, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id} } from './services/api';
 
 const Login = () => {
   const [email, setEmail] = useState('');
