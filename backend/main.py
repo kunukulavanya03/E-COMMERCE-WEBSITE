@@ -9,7 +9,7 @@ from database import get_db, engine
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="This_Project_Outlines_The_Backend_Api_Specification_For_An_E-Commerce_Website._The_Backend_Will_Be_Built_Using_Fastapi_And_Sqlalchemy,_Providing_A_Restful_Api_For_The_React-Based_Frontend._The_Api_Will_Handle_User_Authentication,_Product_Management,_Cart_Operations,_Order_Processing,_And_Other_Essential_E-Commerce_Functionalities. API",
+    title="This_Project_Outlines_The_Technical_Specifications_For_The_Backend_Api_Of_An_E-Commerce_Website._The_Api_Will_Be_Built_Using_Fastapi_And_Sqlalchemy,_Serving_Data_To_A_React-Based_Frontend._The_Api_Will_Provide_Functionalities_For_User_Management,_Product_Catalog_Management,_Order_Processing,_And_Payment_Integration. API",
     description="Generated from Impact Analysis specifications",
     version="1.0.0"
 )
@@ -33,7 +33,7 @@ def root():
 
 @app.get("/health")
 def health():
-    return {"status": "healthy", "service": "this_project_outlines_the_backend_api_specification_for_an_e-commerce_website._the_backend_will_be_built_using_fastapi_and_sqlalchemy,_providing_a_restful_api_for_the_react-based_frontend._the_api_will_handle_user_authentication,_product_management,_cart_operations,_order_processing,_and_other_essential_e-commerce_functionalities."}
+    return {"status": "healthy", "service": "this_project_outlines_the_technical_specifications_for_the_backend_api_of_an_e-commerce_website._the_api_will_be_built_using_fastapi_and_sqlalchemy,_serving_data_to_a_react-based_frontend._the_api_will_provide_functionalities_for_user_management,_product_catalog_management,_order_processing,_and_payment_integration."}
 
 # Generated API endpoints
 @app.put("/30")
