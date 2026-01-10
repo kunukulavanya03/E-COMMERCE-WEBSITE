@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LogIn, Mail, Lock, MessageCircle } from 'lucide-react';
-import { createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, createAuthregister, getProducts{product_id}, createCartadd{product_id}, getOrders{order_id}, getCart, createProducts, getCategories } from './services/api';
+import { createAuthregister, getProducts{product_id}, getOrders{order_id}, getCart, createOrders, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, deleteCartremove{product_id}, createAuthpassword_reset } from './services/api';
 
 interface LoginProps {
   onNavigate: () => void;
