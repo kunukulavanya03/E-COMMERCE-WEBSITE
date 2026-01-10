@@ -68,6 +68,10 @@ export const api_auth_login = async (data) => {
   const response = await api.post('/api/auth/login', data);
   return response.data;
 };
+export const api_auth_password_reset = async (data) => {
+  const response = await api.post('/api/auth/password_reset', data);
+  return response.data;
+};
 export const api_products = async (params = {}) => {
   const response = await api.get('/api/products', { params });
   return response.data;
