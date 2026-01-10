@@ -43,27 +43,27 @@ cd backend
 
 ## Features
 
-- User registration and authentication (JWT)
-- Product catalog management (CRUD operations)
-- Product categorization
-- Shopping cart functionality
+- User registration and authentication
+- Product catalog browsing and searching
+- Shopping cart management
 - Order placement and tracking
 - Admin panel for product and user management
-- Password reset functionality
-- Search functionality
+- Category management
+- Secure password storage (hashing)
+- API rate limiting to prevent abuse
 
 ## API Endpoints
 
-- `POST /api/auth/register` - Register a new user account.
-- `POST /api/auth/login` - Login with an existing user account.
-- `POST /api/auth/password_reset` - Request password reset for a user.
-- `GET /api/products` - Retrieve a list of products (paginated).
-- `GET /api/products/{product_id}` - Retrieve details for a specific product.
-- `POST /api/products` - Create a new product (admin only).
-- `PUT /api/products/{product_id}` - Update an existing product (admin only).
-- `DELETE /api/products/{product_id}` - Delete a product (admin only).
-- `GET /api/categories` - Retrieve a list of product categories.
-- `GET /api/cart` - Retrieve the user's shopping cart.
+- `POST /api/auth/register` - Registers a new user.
+- `POST /api/auth/login` - Logs in an existing user.
+- `GET /api/auth/me` - Retrieves the currently logged-in user's profile.
+- `GET /api/products` - Retrieves a list of products, optionally filtered by category and search term.
+- `GET /api/products/{product_id}` - Retrieves a specific product by ID.
+- `POST /api/products` - Creates a new product (Admin only).
+- `PUT /api/products/{product_id}` - Updates an existing product (Admin only).
+- `DELETE /api/products/{product_id}` - Deletes a product (Admin only).
+- `GET /api/categories` - Retrieves a list of product categories.
+- `POST /api/cart/add` - Adds a product to the user's shopping cart.
 
 ## License
 
