@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react@0.487.0";
 
 import { cn } from "./utils";
 import { Button } from "./button";
-import { createAuthregister, getProducts{product_id}, getOrders{order_id}, getCart, createOrders, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, deleteCartremove{product_id}, createAuthpassword_reset } from './services/api';
+import { createAuthregister, getProducts{product_id}, getOrders{order_id}, createOrderscreate, getAuthme, getCart, updateCartupdate{product_id}, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id} } from './services/api';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
