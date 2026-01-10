@@ -5,7 +5,7 @@ import { Command as CommandPrimitive } from "cmdk@1.1.1";
 import { SearchIcon } from "lucide-react@0.487.0";
 
 import { cn } from "./utils";
-import { createAuthregister, getProducts{product_id}, getOrders{order_id}, getCart, createOrders, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, deleteCartremove{product_id}, createAuthpassword_reset } from './services/api';
+import { createAuthregister, getProducts{product_id}, getOrders{order_id}, createOrderscreate, getAuthme, getCart, updateCartupdate{product_id}, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id} } from './services/api';
 import {
   Dialog,
   DialogContent,
