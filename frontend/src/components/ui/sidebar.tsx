@@ -18,7 +18,7 @@ import {
   SheetTitle,
 } from "./sheet";
 import { Skeleton } from "./skeleton";
-import { createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, createAuthregister, getProducts{product_id}, createCartadd{product_id}, getOrders{order_id}, getCart, createProducts, getCategories } from './services/api';
+import { createAuthregister, getProducts{product_id}, getOrders{order_id}, getCart, createOrders, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, deleteCartremove{product_id}, createAuthpassword_reset } from './services/api';
 import {
   Tooltip,
   TooltipContent,
