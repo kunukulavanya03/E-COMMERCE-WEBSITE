@@ -21,20 +21,8 @@ class UserResponse(UserBase):
         from_attributes = True
 
 class FieldsBase(BaseModel):
-    HARDCODED: int
-    to: datetime
-    hover: str
-    Context: datetime
-    sm: str
-    selected: str
-    id: str
-    focus: str
-    button: str
-    skeleton: str
-    normal: str
-    placeholder: str
-    file: str
-    selection: str
+    name: str
+    description: Optional[str] = None
 
 class FieldsCreate(FieldsBase):
     pass
@@ -47,21 +35,69 @@ class FieldsResponse(FieldsBase):
     class Config:
         from_attributes = True
 
+class Dynamic_Hardcoded_ValuesBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+class Dynamic_Hardcoded_ValuesCreate(Dynamic_Hardcoded_ValuesBase):
+    pass
+
+class Dynamic_Hardcoded_ValuesResponse(Dynamic_Hardcoded_ValuesBase):
+    id: int
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+class Dynamic_Mock_DataBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+class Dynamic_Mock_DataCreate(Dynamic_Mock_DataBase):
+    pass
+
+class Dynamic_Mock_DataResponse(Dynamic_Mock_DataBase):
+    id: int
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+class Dynamic_Hardcoded_Values_With_TypeBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+class Dynamic_Hardcoded_Values_With_TypeCreate(Dynamic_Hardcoded_Values_With_TypeBase):
+    pass
+
+class Dynamic_Hardcoded_Values_With_TypeResponse(Dynamic_Hardcoded_Values_With_TypeBase):
+    id: int
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+class Dynamic_Mock_Data_With_TypeBase(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+class Dynamic_Mock_Data_With_TypeCreate(Dynamic_Mock_Data_With_TypeBase):
+    pass
+
+class Dynamic_Mock_Data_With_TypeResponse(Dynamic_Mock_Data_With_TypeBase):
+    id: int
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        from_attributes = True
+
 class DataBase(BaseModel):
-    HARDCODED: int
-    to: datetime
-    hover: str
-    Context: datetime
-    sm: str
-    selected: str
-    id: str
-    focus: str
-    button: str
-    skeleton: str
-    normal: str
-    placeholder: str
-    file: str
-    selection: str
+    name: str
+    description: Optional[str] = None
 
 class DataCreate(DataBase):
     pass
@@ -75,20 +111,8 @@ class DataResponse(DataBase):
         from_attributes = True
 
 class DatabaseBase(BaseModel):
-    HARDCODED: int
-    to: datetime
-    hover: str
-    Context: datetime
-    sm: str
-    selected: str
-    id: str
-    focus: str
-    button: str
-    skeleton: str
-    normal: str
-    placeholder: str
-    file: str
-    selection: str
+    name: str
+    description: Optional[str] = None
 
 class DatabaseCreate(DatabaseBase):
     pass
@@ -101,26 +125,14 @@ class DatabaseResponse(DatabaseBase):
     class Config:
         from_attributes = True
 
-class RestaurantBase(BaseModel):
-    HARDCODED: int
-    to: datetime
-    hover: str
-    Context: datetime
-    sm: str
-    selected: str
-    id: str
-    focus: str
-    button: str
-    skeleton: str
-    normal: str
-    placeholder: str
-    file: str
-    selection: str
+class CreateBase(BaseModel):
+    name: str
+    description: Optional[str] = None
 
-class RestaurantCreate(RestaurantBase):
+class CreateCreate(CreateBase):
     pass
 
-class RestaurantResponse(RestaurantBase):
+class CreateResponse(CreateBase):
     id: int
     created_at: datetime
     updated_at: datetime
@@ -128,53 +140,14 @@ class RestaurantResponse(RestaurantBase):
     class Config:
         from_attributes = True
 
-class OrderBase(BaseModel):
-    HARDCODED: int
-    to: datetime
-    hover: str
-    Context: datetime
-    sm: str
-    selected: str
-    id: str
-    focus: str
-    button: str
-    skeleton: str
-    normal: str
-    placeholder: str
-    file: str
-    selection: str
+class DesignBase(BaseModel):
+    name: str
+    description: Optional[str] = None
 
-class OrderCreate(OrderBase):
+class DesignCreate(DesignBase):
     pass
 
-class OrderResponse(OrderBase):
-    id: int
-    created_at: datetime
-    updated_at: datetime
-    
-    class Config:
-        from_attributes = True
-
-class FunctionBase(BaseModel):
-    HARDCODED: int
-    to: datetime
-    hover: str
-    Context: datetime
-    sm: str
-    selected: str
-    id: str
-    focus: str
-    button: str
-    skeleton: str
-    normal: str
-    placeholder: str
-    file: str
-    selection: str
-
-class FunctionCreate(FunctionBase):
-    pass
-
-class FunctionResponse(FunctionBase):
+class DesignResponse(DesignBase):
     id: int
     created_at: datetime
     updated_at: datetime
