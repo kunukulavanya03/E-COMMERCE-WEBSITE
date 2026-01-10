@@ -16,20 +16,38 @@ class User(Base):
 class Fields(Base):
     __tablename__ = "fieldss"
     id = Column(Integer, primary_key=True, index=True)
-    HARDCODED = Column(Integer)
-    to = Column(DateTime)
-    hover = Column(String, index=True)
-    Context = Column(DateTime)
-    sm = Column(String, index=True)
-    selected = Column(String, index=True)
-    id = Column(String, index=True)
-    focus = Column(String, index=True)
-    button = Column(String, index=True)
-    skeleton = Column(String, index=True)
-    normal = Column(String, index=True)
-    placeholder = Column(String, index=True)
-    file = Column(String, index=True)
-    selection = Column(String, index=True)
+    name = Column(String, index=True)
+    description = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Dynamic_Hardcoded_Values(Base):
+    __tablename__ = "dynamic_hardcoded_valuess"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    description = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Dynamic_Mock_Data(Base):
+    __tablename__ = "dynamic_mock_datas"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    description = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Dynamic_Hardcoded_Values_With_Type(Base):
+    __tablename__ = "dynamic_hardcoded_values_with_types"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    description = Column(Text)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Dynamic_Mock_Data_With_Type(Base):
+    __tablename__ = "dynamic_mock_data_with_types"
+    id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     description = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
@@ -38,20 +56,6 @@ class Fields(Base):
 class Data(Base):
     __tablename__ = "datas"
     id = Column(Integer, primary_key=True, index=True)
-    HARDCODED = Column(Integer)
-    to = Column(DateTime)
-    hover = Column(String, index=True)
-    Context = Column(DateTime)
-    sm = Column(String, index=True)
-    selected = Column(String, index=True)
-    id = Column(String, index=True)
-    focus = Column(String, index=True)
-    button = Column(String, index=True)
-    skeleton = Column(String, index=True)
-    normal = Column(String, index=True)
-    placeholder = Column(String, index=True)
-    file = Column(String, index=True)
-    selection = Column(String, index=True)
     name = Column(String, index=True)
     description = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
@@ -60,86 +64,22 @@ class Data(Base):
 class Database(Base):
     __tablename__ = "databases"
     id = Column(Integer, primary_key=True, index=True)
-    HARDCODED = Column(Integer)
-    to = Column(DateTime)
-    hover = Column(String, index=True)
-    Context = Column(DateTime)
-    sm = Column(String, index=True)
-    selected = Column(String, index=True)
-    id = Column(String, index=True)
-    focus = Column(String, index=True)
-    button = Column(String, index=True)
-    skeleton = Column(String, index=True)
-    normal = Column(String, index=True)
-    placeholder = Column(String, index=True)
-    file = Column(String, index=True)
-    selection = Column(String, index=True)
     name = Column(String, index=True)
     description = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-class Restaurant(Base):
-    __tablename__ = "restaurants"
+class Create(Base):
+    __tablename__ = "creates"
     id = Column(Integer, primary_key=True, index=True)
-    HARDCODED = Column(Integer)
-    to = Column(DateTime)
-    hover = Column(String, index=True)
-    Context = Column(DateTime)
-    sm = Column(String, index=True)
-    selected = Column(String, index=True)
-    id = Column(String, index=True)
-    focus = Column(String, index=True)
-    button = Column(String, index=True)
-    skeleton = Column(String, index=True)
-    normal = Column(String, index=True)
-    placeholder = Column(String, index=True)
-    file = Column(String, index=True)
-    selection = Column(String, index=True)
     name = Column(String, index=True)
     description = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-class Order(Base):
-    __tablename__ = "orders"
+class Design(Base):
+    __tablename__ = "designs"
     id = Column(Integer, primary_key=True, index=True)
-    HARDCODED = Column(Integer)
-    to = Column(DateTime)
-    hover = Column(String, index=True)
-    Context = Column(DateTime)
-    sm = Column(String, index=True)
-    selected = Column(String, index=True)
-    id = Column(String, index=True)
-    focus = Column(String, index=True)
-    button = Column(String, index=True)
-    skeleton = Column(String, index=True)
-    normal = Column(String, index=True)
-    placeholder = Column(String, index=True)
-    file = Column(String, index=True)
-    selection = Column(String, index=True)
-    name = Column(String, index=True)
-    description = Column(Text)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
-class Function(Base):
-    __tablename__ = "functions"
-    id = Column(Integer, primary_key=True, index=True)
-    HARDCODED = Column(Integer)
-    to = Column(DateTime)
-    hover = Column(String, index=True)
-    Context = Column(DateTime)
-    sm = Column(String, index=True)
-    selected = Column(String, index=True)
-    id = Column(String, index=True)
-    focus = Column(String, index=True)
-    button = Column(String, index=True)
-    skeleton = Column(String, index=True)
-    normal = Column(String, index=True)
-    placeholder = Column(String, index=True)
-    file = Column(String, index=True)
-    selection = Column(String, index=True)
     name = Column(String, index=True)
     description = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
