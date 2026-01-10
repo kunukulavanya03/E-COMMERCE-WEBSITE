@@ -4,7 +4,7 @@ import { Dashboard } from './components/Dashboard';
 import { Search } from './components/Search';
 import { Booking } from './components/Booking';
 import { Payment } from './components/Payment';
-import { logout, createAuthregister, createAuthlogin, getProducts{product_id}, getCategories, getProducts, updateCartupdate, deleteCartremove{product_id}, getOrders, login } from './services/api';
+import { createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, createAuthregister, getProducts{product_id}, createCartadd{product_id}, getOrders{order_id}, getCart, createProducts, getCategories } from './services/api';
 
 type Screen = 'login' | 'dashboard' | 'search' | 'booking' | 'payment';
 
