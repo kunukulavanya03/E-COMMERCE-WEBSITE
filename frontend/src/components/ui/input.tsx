@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { cn } from "./utils";
-import { createAuthregister, getProducts{product_id}, getOrders{order_id}, getCart, createOrders, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, deleteCartremove{product_id}, createAuthpassword_reset } from './services/api';
+import { createAuthregister, getProducts{product_id}, getOrders{order_id}, createOrderscreate, getAuthme, getCart, updateCartupdate{product_id}, createAuthlogin, updateProducts{product_id}, deleteProducts{product_id} } from './services/api';
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
