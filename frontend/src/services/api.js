@@ -68,8 +68,8 @@ export const api_auth_login = async (data) => {
   const response = await api.post('/api/auth/login', data);
   return response.data;
 };
-export const api_auth_password_reset = async (data) => {
-  const response = await api.post('/api/auth/password_reset', data);
+export const api_auth_me = async (params = {}) => {
+  const response = await api.get('/api/auth/me', { params });
   return response.data;
 };
 export const api_products = async (params = {}) => {
@@ -96,24 +96,24 @@ export const api_categories = async (params = {}) => {
   const response = await api.get('/api/categories', { params });
   return response.data;
 };
-export const api_cart = async (params = {}) => {
-  const response = await api.get('/api/cart', { params });
-  return response.data;
-};
 export const api_cart_add = async (data) => {
   const response = await api.post('/api/cart/add', data);
   return response.data;
 };
-export const api_cart_update = async (id, data) => {
-  const response = await api.put(`/api/cart/update/${id}`, data);
+export const api_cart = async (params = {}) => {
+  const response = await api.get('/api/cart', { params });
+  return response.data;
+};
+export const api_cart_update_{product_id} = async (id, data) => {
+  const response = await api.put(`/api/cart/update/{product_id}/${id}`, data);
   return response.data;
 };
 export const api_cart_remove_{product_id} = async (id) => {
   const response = await api.delete(`/api/cart/remove/{product_id}/${id}`);
   return response.data;
 };
-export const api_orders = async (data) => {
-  const response = await api.post('/api/orders', data);
+export const api_orders_create = async (data) => {
+  const response = await api.post('/api/orders/create', data);
   return response.data;
 };
 export const api_orders_{order_id} = async (params = {}) => {
@@ -122,6 +122,10 @@ export const api_orders_{order_id} = async (params = {}) => {
 };
 export const api_orders = async (params = {}) => {
   const response = await api.get('/api/orders', { params });
+  return response.data;
+};
+export const api_orders_{order_id}_status = async (id, data) => {
+  const response = await api.put(`/api/orders/{order_id}/status/${id}`, data);
   return response.data;
 };
 
