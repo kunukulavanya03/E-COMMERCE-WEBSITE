@@ -43,27 +43,30 @@ cd backend
 
 ## Features
 
-- User authentication and authorization
-- Product catalog management
-- Shopping cart functionality
-- Order processing and management
+- User registration and authentication
+- Product browsing and searching
+- Product details page
+- Shopping cart management
+- Order placement and tracking
+- Admin panel for product management
 - Category management
-- Admin panel for managing products and users
-- Search functionality
-- Pagination for product listing
+- User role management (Admin)
+- Secure password storage
+- JWT based authentication
+- Database interaction using SQLAlchemy ORM
 
 ## API Endpoints
 
-- `POST /api/auth/register` - Register a new user account.
-- `POST /api/auth/login` - Log in an existing user.
-- `GET /api/products` - Retrieve a list of products, with optional pagination and filtering.
-- `GET /api/products/{product_id}` - Retrieve details for a specific product.
-- `POST /api/products` - Create a new product (Admin only).
-- `PUT /api/products/{product_id}` - Update an existing product (Admin only).
-- `DELETE /api/products/{product_id}` - Delete a product (Admin only).
-- `GET /api/categories` - Retrieve a list of product categories.
-- `GET /api/cart` - Retrieve the user's shopping cart.
-- `POST /api/cart/add` - Add a product to the user's shopping cart.
+- `POST /api/auth/register` - Registers a new user account.
+- `POST /api/auth/login` - Logs in an existing user.
+- `GET /api/products` - Retrieves a list of all products, with optional pagination and filtering.
+- `GET /api/products/{product_id}` - Retrieves a specific product by its ID.
+- `POST /api/products` - Creates a new product (Admin only).
+- `PUT /api/products/{product_id}` - Updates an existing product (Admin only).
+- `DELETE /api/products/{product_id}` - Deletes a product (Admin only).
+- `GET /api/categories` - Retrieves a list of all product categories.
+- `GET /api/cart` - Retrieves the user's shopping cart.
+- `POST /api/cart/add/{product_id}` - Adds a product to the user's shopping cart.
 
 ## License
 
