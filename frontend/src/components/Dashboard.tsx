@@ -1,6 +1,6 @@
 import { Search, Calendar, MessageCircle, User, Bell, Hotel, MapPin, Star, TrendingUp } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { logout, createAuthregister, createAuthlogin, getProducts{product_id}, getCategories, getProducts, updateCartupdate, deleteCartremove{product_id}, getOrders, login } from './services/api';
+import { createAuthlogin, updateProducts{product_id}, deleteProducts{product_id}, createAuthregister, getProducts{product_id}, createCartadd{product_id}, getOrders{order_id}, getCart, createProducts, getCategories } from './services/api';
 
 interface DashboardProps {
   onNavigate: () => void;
